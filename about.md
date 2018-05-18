@@ -7,6 +7,6 @@ show_experiences: true
 show_educations: true
 ---
 
-Hi~ I'm Mark, a software engineer based in Brisbane. I currently work at MCA as a System Administrator.
+Hi~ I'm Mark, a software developer and a Machine Learning enthusiast. I love everything about computer science, maths and physics. I currently work at MCA as a System Administrator. 
 
-In my spare time, I am exploring new technologies, work on some pet projects
+As a developer, I spend most of my spare time exploring new technologies. Most recently I’ve been interested in the potential and technology behind the Blockchain.
