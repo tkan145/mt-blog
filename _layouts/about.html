@@ -1,0 +1,76 @@
+---
+layout: default
+show_skills: true
+show_cv: true
+show_experiences: true
+show_educations: true
+---
+
+<div class="about">
+    {%- if page.title -%}
+        <h1 class="display-4">{{ page.title }}</h1>
+    {%- endif -%}
+
+    {{ content }}
+
+    <div class="d-flex flex-column flex-md-row lead mb-3">
+        <a class="btn btn-outline-primary" href="{{ site.url }}/assets/NavCV.pdf">My CV</a>
+    </div>
+
+    <!-- Skills -->
+    {%- if page.show_skills -%}
+        {%- if site.skills.size > 0-%}
+        <div class="skills">
+            <h2 class="post-list-heading">Skills</h2>
+            <hr>
+            <div class="row mt-4">
+                {% assign skills = site.skills | sort: 'order' %}
+                {% for skill in skills %}
+                {%- include skill.html -%}
+                {% endfor %}
+            </div>
+        </div>
+        {%- endif-%}
+    {%- endif -%}
+
+    <!-- Experience -->
+    {%- if page.show_experiences -%}
+        
+        {%- if site.experiences.size > 0 -%}
+            <h2 class="post-list-heading">Experiences</h2>
+            <hr>
+            <ul class="timeline ml-0 mt-4">
+                {% assign experiences = site.experiences | sort: 'order' %}
+                {% assign i = 0 %}
+                {% for experience in experiences %}
+                {% assign i = i | modulo: 2 %}
+                <li class="{%- if i != 0 -%}timeline-inverted{%- endif-%}" >
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                        <h4 class="timeline-title text-primary">{{experience.title}}</h4>
+                        <p><small>{{experience.time}}</small></p>
+                        </div>
+                        <div class="timeline-body">
+                        <p>{{experience.content}}</p>
+                        </div>
+                    </div>
+                </li>
+                {% assign i = i | plus:1 %}
+                {% endfor %}
+            </ul>
+        {%- endif-%}
+    {%- endif -%}
+
+    <!-- Education -->
+    {%- if page.show_educations -%}
+        {%- if site.educations.size > 0-%}
+            <h2 class="post-list-heading">Education</h2>
+            <hr>
+            {% assign educations = site.educations | sort: 'order' %}
+            {% for education in educations %}
+            {%- include education.html -%}
+            {% endfor %}
+        {%- endif-%}
+    {%- endif -%}
+
+</div>

@@ -1,0 +1,17 @@
+
+<ul class="navbar-nav flex-row ml-auto">
+  {%- if site.dribbble_username -%}<li class="nav-item"><a class="nav-link" href="https://dribbble.com/{{ site.dribbble_username| cgi_escape | escape }}"><i class="far fa-envelope-open"></i> </a></li>{%- endif -%}
+  {%- if site.facebook_username -%}<li class="nav-item"><a class="nav-link" href="https://www.facebook.com/{{ site.facebook_username| cgi_escape | escape }}"><i class="far fa-envelope-open"></i></a></li>{%- endif -%}
+  {%- if site.flickr_username -%}<li class="nav-item"><a class="nav-link" href="https://www.flickr.com/photos/{{ site.flickr_username| cgi_escape | escape }}"><i class="far fa-envelope-open"></i> </a></li>{%- endif -%}
+  {%- if site.github_username -%}<li class="nav-item"><a class="nav-link" href="https://github.com/{{ site.github_username| cgi_escape | escape }}"><i class="fab fa-github-alt"></i> </a></li>{%- endif -%}
+  {%- if site.instagram_username -%}<li class="nav-item"><a class="nav-link" href="https://www.instagram.com/{{ site.instagram_username| cgi_escape | escape }}"><i class="far fa-envelope-open"></i> </a></li>{%- endif -%}
+  {%- if site.linkedin_username -%}<li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><i class="fab fa-linkedin"></i> </a></li>{%- endif -%}
+  {%- if site.pinterest_username -%}<li class="nav-item"><a class="nav-link" href="https://www.pinterest.com/{{ site.pinterest_username| cgi_escape | escape }}"><i class="far fa-envelope-open"></i> </a></li>{%- endif -%}
+  {%- for mst in site.mastodon -%}{%- if mst.username and mst.instance -%}<li><a class="nav-link" href="https://{{ mst.instance| cgi_escape | escape}}/@{{mst.username}}"><i class="far fa-envelope-open"></i></a></li>{%- endif -%}{%- endfor -%}
+  {%- if site.twitter_username -%}<li class="nav-item"><a class="nav-link" href="https://twitter.com/{{ site.twitter_username| cgi_escape | escape }}"><i class="fab fa-twitter"></i> </a></li>{%- endif -%}
+  {%- if site.youtube_username -%}<li class="nav-item"><a class="nav-link" href="https://www.youtube.com/{{ site.youtube_username| cgi_escape | escape }}"><i class="far fa-envelope-open"></i> </a></li>{%- endif -%}
+  {%- if site.googleplus_username -%}<li class="nav-item"><a class="nav-link" href="https://plus.google.com/{{ site.googleplus_username| escape }}"><i class="far fa-envelope-open"></i> </a></li>{%- endif -%}
+  {%- if site.rss -%}<li class="nav-item"><a class="nav-link" href="{{ 'feed.xml' | relative_url }}"><i class="fas fa-rss"></i> </a></li>{%- endif -%}
+</ul>
+
+      
